@@ -33,6 +33,11 @@ def get_all_albums():
     db.close()
     return results
 
+@app.get("/additional_endpoint")
+def get_additional_data():
+    data = {"message": "edited data"}
+    return data
+
 
 # @app.get("/albums/{id}")
 # def get_one_album(id):
