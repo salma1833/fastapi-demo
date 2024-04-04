@@ -16,13 +16,11 @@ app.mount("/static", StaticFiles(directory="static", html = True), name="static"
 DBHOST = os.environ.get('DBHOST')
 DBUSER = os.environ.get('DBUSER')
 DBPASS = os.environ.get('DBPASS')
-DB = "nem2p"
+DB = "sa2qt"
 
 @app.get("/")  # zone apex
 def zone_apex():
     return {"Hello": "Hello API", "album_endpoint":"/albums","static_endpoint":"/static"}
-
-
 
 @app.get("/albums")
 def get_all_albums():
@@ -33,10 +31,10 @@ def get_all_albums():
     db.close()
     return results
 
-@app.get("/additional_endpoint")
-def get_additional_data():
-    data = {"message": "edited data"}
-    return data
+#@app.get("/additional_endpoint")
+#def get_additional_data():
+    #data = {"message": "edited data"}
+    #return data
 
 
 # @app.get("/albums/{id}")
