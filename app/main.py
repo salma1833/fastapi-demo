@@ -18,9 +18,9 @@ DBUSER = os.environ.get('DBUSER')
 DBPASS = os.environ.get('DBPASS')
 DB = "sa2qt"
 
-@app.get("/")  # zone apex
-def zone_apex():
-    return {"Hello": "Hello API", "album_endpoint":"/albums","static_endpoint":"/static"}
+#@app.get("/")  # zone apex
+#def zone_apex():
+    #return {"Hello": "Hello API", "album_endpoint":"/albums","static_endpoint":"/static"}
 
 @app.get("/albums")
 def get_all_albums():
